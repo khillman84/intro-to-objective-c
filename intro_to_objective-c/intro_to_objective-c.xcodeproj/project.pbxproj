@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5ADBE3E1EA6876A0018BB42 /* EmployeeDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E5ADBE3D1EA6876A0018BB42 /* EmployeeDatabase.m */; };
 		E5AE00911EA524ED00655962 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE00901EA524ED00655962 /* main.m */; };
 		E5AE00941EA524ED00655962 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE00931EA524ED00655962 /* AppDelegate.m */; };
 		E5AE00971EA524ED00655962 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE00961EA524ED00655962 /* ViewController.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E5ADBE3C1EA6876A0018BB42 /* EmployeeDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeDatabase.h; sourceTree = "<group>"; };
+		E5ADBE3D1EA6876A0018BB42 /* EmployeeDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeDatabase.m; sourceTree = "<group>"; };
 		E5AE008C1EA524ED00655962 /* intro_to_objective-c.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "intro_to_objective-c.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5AE00901EA524ED00655962 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E5AE00921EA524ED00655962 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -75,8 +78,6 @@
 				E5AE00AD1EA599D700655962 /* Model */,
 				E5AE00AE1EA599F000655962 /* Controller */,
 				E5AE00AF1EA59A0200655962 /* View */,
-				E5AE009B1EA524ED00655962 /* Assets.xcassets */,
-				E5AE00A01EA524ED00655962 /* Info.plist */,
 				E5AE008F1EA524ED00655962 /* Supporting Files */,
 			);
 			path = "intro_to_objective-c";
@@ -85,6 +86,10 @@
 		E5AE008F1EA524ED00655962 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E5AE00A01EA524ED00655962 /* Info.plist */,
+				E5AE009B1EA524ED00655962 /* Assets.xcassets */,
+				E5AE00921EA524ED00655962 /* AppDelegate.h */,
+				E5AE00931EA524ED00655962 /* AppDelegate.m */,
 				E5AE00901EA524ED00655962 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -95,8 +100,8 @@
 			children = (
 				E5AE00B31EA5A03100655962 /* NSString+Demo.h */,
 				E5AE00B41EA5A03100655962 /* NSString+Demo.m */,
-				E5AE00921EA524ED00655962 /* AppDelegate.h */,
-				E5AE00931EA524ED00655962 /* AppDelegate.m */,
+				E5ADBE3C1EA6876A0018BB42 /* EmployeeDatabase.h */,
+				E5ADBE3D1EA6876A0018BB42 /* EmployeeDatabase.m */,
 				E5AE00B61EA5A48A00655962 /* Employee.h */,
 				E5AE00B71EA5A48A00655962 /* Employee.m */,
 				E5AE00A61EA52F0400655962 /* Person.h */,
@@ -201,6 +206,7 @@
 			files = (
 				E5AE00971EA524ED00655962 /* ViewController.m in Sources */,
 				E5AE00941EA524ED00655962 /* AppDelegate.m in Sources */,
+				E5ADBE3E1EA6876A0018BB42 /* EmployeeDatabase.m in Sources */,
 				E5AE00AB1EA5455200655962 /* ViewController+Identifier.m in Sources */,
 				E5AE00A81EA52F0400655962 /* Person.m in Sources */,
 				E5AE00B51EA5A03100655962 /* NSString+Demo.m in Sources */,
@@ -366,6 +372,7 @@
 				E5AE00A51EA524ED00655962 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

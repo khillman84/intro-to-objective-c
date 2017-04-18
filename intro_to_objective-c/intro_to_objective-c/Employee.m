@@ -11,34 +11,35 @@
 
 @implementation Employee : Person
 
-NSString *_employeeNumber;
-NSString *_yearsEmployed;
-NSString *_managersName;
-
-//Getter
--(NSString *)emplyeeNumber{
-    return _employeeNumber;
+-(instancetype)initWithFirstName:(NSString *)firstName
+                        lastName:(NSString *)lastName
+                             age:(NSString *)age
+                   yearsEmployed:(NSNumber *)yearsEmployed
+                         manager:(NSString *)managerName
+                           email:(NSString *)email{
+    
+    self = [super initWithFirstName:firstName lastName:lastName andAge:age];
+    
+    if (self) {
+       _yearsEmployed = yearsEmployed;
+       _managerName = managerName;
+       _employeeNumber = [NSNumber numberWithInt:arc4random_uniform(1000)];
+       _email = email;
+    }
+    
+    return self;
 }
 
--(NSString *)yearsEmployed{
-    return _yearsEmployed;
-}
-
--(NSString *)managersName{
-    return _managersName;
-}
-
-//Setter
--(void)setEmployeeNumber:(NSString *)employeeNumber{
-    _employeeNumber = employeeNumber;
-}
-
--(void)setYearsEmployed:(NSString *)yearsEmployed{
-    _yearsEmployed = yearsEmployed;
-}
-
--(void)setManagersName:(NSString *)managersName{
-    _managersName = managersName;
+-(id)copyWithZone:(NSZone *)zone{
+    
+    Employee *employee = [super copyWithZone:zone];
+    
+    employee.employeeNumber = self.employeeNumber;
+    employee.managerName = self.managerName;
+    employee.yearsEmployed = self.yearsEmployed;
+    employee.email = self.email;
+    
+    return employee;
 }
 
 @end

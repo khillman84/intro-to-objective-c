@@ -10,6 +10,7 @@
 #import "ViewControllerDataSource.h"
 
 #import "Person.h"
+#import "Employee.h"
 
 
 
@@ -22,20 +23,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self requiredNumberForEachItem:100];
+//    [[EmployeeDatabase shared] allemployees]; this is how we access the singleton
     
+    Employee *original = [[Employee alloc]initWithFirstName:@"Kyle" lastName:@"Hillman" age:@"33" yearsEmployed:@2 andManager:@"Myself"];
     
-//    Person *kyle = [[Person alloc] init];
-    
-//    [kyle setName:@"Kyle"];
-//    
-//    [kyle walk];
+    NSLog(original.firstName);
     
     [Person sayHello];
-}
-
--(void)requiredNumberForEachItem:(int)number{
-    
 }
 
 
