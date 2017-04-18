@@ -11,7 +11,7 @@
 
 #import "Person.h"
 
-static int gMoveNumber = 10;
+
 
 @interface ViewController () <ViewControllerDataSource>
 
@@ -25,11 +25,11 @@ static int gMoveNumber = 10;
     [self requiredNumberForEachItem:100];
     
     
-    Person *kyle = [[Person alloc] init];
+//    Person *kyle = [[Person alloc] init];
     
-    [kyle setName:@"Kyle"];
-    
-    [kyle walk];
+//    [kyle setName:@"Kyle"];
+//    
+//    [kyle walk];
     
     [Person sayHello];
 }
