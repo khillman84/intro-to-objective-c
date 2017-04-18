@@ -10,7 +10,7 @@
 
 @interface EmployeeDatabase ()
 
-@property(strong, nonatomic) NSMutableArray *employees = [NSMutableArray array];
+@property(strong, nonatomic) NSMutableArray *employees;
 
 @end
 
@@ -30,7 +30,14 @@
     
 }
 
-
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.employees = [[NSMutableArray alloc]init];
+    }
+    return self;
+}
 
 //MARK: Helper methods
 -(NSURL *)documentsDirectory{

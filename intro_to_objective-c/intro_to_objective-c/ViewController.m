@@ -25,11 +25,11 @@
     
 //    [[EmployeeDatabase shared] allemployees]; this is how we access the singleton
     
-    Employee *original = [[Employee alloc]initWithFirstName:@"Kyle" lastName:@"Hillman" age:@"33" yearsEmployed:@2 andManager:@"Myself"];
+    Employee *original = [[Employee alloc]initWithFirstName:@"Kyle" lastName:@"Hillman" age:@"33" yearsEmployed:@2 manager:@"Myself" email:@"khillman84@gmail.com"];
+    Employee *numberTwo = [[Employee alloc]initWithFirstName:@"Angela" lastName:@"Hillman" age:@"33" yearsEmployed:@10 manager:@"Herself" email:@"hahaha@nope.com"];
     
     NSLog(original.firstName);
-    
-    [Person sayHello];
+    NSLog(numberTwo.firstName);
 }
 
 
