@@ -31,6 +31,8 @@
     Employee *original = [[Employee alloc]initWithFirstName:self.firstName.text lastName:self.lastName.text age:self.age.text yearsEmployed:@0 manager:@"Beelzebub" email:self.email.text];
     [[EmployeeDatabase shared] add: original];
     [self dismissViewControllerAnimated:YES completion:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
+    
 }
 
 - (IBAction)cancelAddEmployee:(id)sender {
