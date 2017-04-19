@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5812E151EA7F9BA00ABDEFC /* AddEmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5812E141EA7F9BA00ABDEFC /* AddEmployeeViewController.m */; };
 		E5ADBE3E1EA6876A0018BB42 /* EmployeeDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E5ADBE3D1EA6876A0018BB42 /* EmployeeDatabase.m */; };
 		E5AE00911EA524ED00655962 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE00901EA524ED00655962 /* main.m */; };
 		E5AE00941EA524ED00655962 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE00931EA524ED00655962 /* AppDelegate.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E5812E131EA7F9BA00ABDEFC /* AddEmployeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEmployeeViewController.h; sourceTree = "<group>"; };
+		E5812E141EA7F9BA00ABDEFC /* AddEmployeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEmployeeViewController.m; sourceTree = "<group>"; };
 		E5ADBE3C1EA6876A0018BB42 /* EmployeeDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeDatabase.h; sourceTree = "<group>"; };
 		E5ADBE3D1EA6876A0018BB42 /* EmployeeDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeDatabase.m; sourceTree = "<group>"; };
 		E5AE008C1EA524ED00655962 /* intro_to_objective-c.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "intro_to_objective-c.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +116,8 @@
 		E5AE00AE1EA599F000655962 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E5812E131EA7F9BA00ABDEFC /* AddEmployeeViewController.h */,
+				E5812E141EA7F9BA00ABDEFC /* AddEmployeeViewController.m */,
 				E5AE00B91EA5A8C200655962 /* PersonQueue.h */,
 				E5AE00AC1EA5484000655962 /* ViewControllerDataSource.h */,
 				E5AE00951EA524ED00655962 /* ViewController.h */,
@@ -212,6 +217,7 @@
 				E5AE00B51EA5A03100655962 /* NSString+Demo.m in Sources */,
 				E5AE00911EA524ED00655962 /* main.m in Sources */,
 				E5AE00B81EA5A48A00655962 /* Employee.m in Sources */,
+				E5812E151EA7F9BA00ABDEFC /* AddEmployeeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
