@@ -39,6 +39,39 @@
     return self;
 }
 
+-(NSInteger)count{
+    NSLog(@"%lu", _employees.count);
+    return _employees.count;
+}
+
+-(NSArray *)allEmployees;{
+    for(Employee *employee in self.employees){
+        NSLog(@"%@", employee.firstName);
+    }
+    return _employees;
+}
+
+-(Employee *)employeeAtIndex:(int)index{
+    [self.employees objectAtIndex: index];
+    return _employees[index];
+}
+
+-(void)add:(Employee *)employee{
+    [self.employees addObject: employee];
+}
+
+-(void)remove:(Employee *)employee{
+    [self.employees removeObject:employee];
+}
+
+-(void)removeEmployeeAtIndex:(int)index{
+    [self.employees removeObjectAtIndex:index];
+}
+
+-(void)removeAllemployees{
+    [self.employees removeAllObjects];
+}
+
 //MARK: Helper methods
 -(NSURL *)documentsDirectory{
     NSURL *documentsDirectoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
