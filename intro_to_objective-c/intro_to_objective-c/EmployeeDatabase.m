@@ -40,8 +40,7 @@
 }
 
 -(NSInteger)count{
-    NSLog(@"%lu", _employees.count);
-    return _employees.count;
+    return self.employees.count;
 }
 
 -(NSArray *)allEmployees;{
@@ -52,8 +51,7 @@
 }
 
 -(Employee *)employeeAtIndex:(int)index{
-    [self.employees objectAtIndex: index];
-    return _employees[index];
+    return [self.employees objectAtIndex: index];
 }
 
 -(void)add:(Employee *)employee{

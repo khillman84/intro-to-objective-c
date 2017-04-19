@@ -15,7 +15,11 @@
 
 
 
-@interface ViewController () <ViewControllerDataSource>
+@interface ViewController () <ViewControllerDataSource, UITableViewDataSource>
+
+
+@property (weak, nonatomic) IBOutlet UITableView *table;
+
 
 @end
 
@@ -23,6 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.table.dataSource = self;
     
     
     Employee *original = [[Employee alloc]initWithFirstName:@"Kyle" lastName:@"Hillman" age:@"33" yearsEmployed:@2 manager:@"Myself" email:@"khillman84@gmail.com"];
@@ -38,6 +44,18 @@
     
 //    NSLog(@"%@", original.firstName);
 //    NSLog(@"%@", numberTwo.firstName);
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [[EmployeeDatabase shared] count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [self.table dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    cell.textLabel.text = [[EmployeeDatabase shared] employeeAtIndex:indexPath.row].firstName;
+    
+    return cell;
 }
 
 

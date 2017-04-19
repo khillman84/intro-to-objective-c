@@ -10,10 +10,10 @@
 
 @protocol ViewControllerDataSource <NSObject>
 
-@optional
--(void)optionalNumberOfItems:(int)number;
-
-@required
--(void)requiredNumberForEachItem:(int)number;
+//@optional
+//-(void)optionalNumberOfItems:(int)number;
+//
+//@required
+//-(void)requiredNumberForEachItem:(int)number;
 
 @end
