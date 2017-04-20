@@ -13,7 +13,7 @@
 #import "Employee.h"
 #import "EmployeeDatabase.h"
 
-
+//static void *kvoContext = &kvoContext;
 
 @interface ViewController () <ViewControllerDataSource, UITableViewDataSource>
 
@@ -32,8 +32,20 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleData) name:@"reloadData" object:nil];
     
-    
+//    [self setValue:NULL forKey:@"ViewController.handleData"];
 }
+
+//-(void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    
+//    [self addObserver:self forKeyPath:@"ViewController.handleData" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:kvoContext];
+//}
+//
+//-(void)viewWillDisappear:(BOOL)animated{
+//    [super viewWillDisappear:animated];
+//    
+//    [self removeObserver:self forKeyPath:@"ViewController.handleData"];
+//}
 
 -(void)handleData {
     [self.table reloadData];
@@ -51,5 +63,42 @@
     return cell;
 }
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(editingStyle == UITableViewCellEditingStyleDelete){
+        [[EmployeeDatabase shared] removeEmployeeAtIndex:indexPath.row];
+        [tableView reloadData];
+    }
+}
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -70,4 +70,55 @@
     return employee;
 }
 
+-(void)setYearsEmployed:(NSNumber *)yearsEmployed{
+    
+    if(_yearsEmployed != yearsEmployed){
+        
+        [yearsEmployed retain];
+        [_yearsEmployed release];
+        
+        _yearsEmployed = yearsEmployed;
+    }
+}
+
+-(NSNumber *)yearsEmployedDescription{
+    NSNumber *description = [[[NSNumber alloc]initWithFormat:@"%@", self.yearsEmployed]autorelease];
+    
+    return description;
+}
+
+-(void)setManagerName:(NSString *)managerName{
+    
+    if(_managerName != managerName){
+        
+        [managerName retain];
+        [_managerName release];
+        
+        _managerName = managerName;
+    }
+}
+
+-(NSString *)managerNameDescription{
+    NSString *description = [[[NSString alloc]initWithFormat:@"%@", self.managerName]autorelease];
+    
+    return description;
+}
+
+-(void)setEmail:(NSString *)email{
+    
+    if(_email != email){
+        
+        [email retain];
+        [_email release];
+        
+        _email = email;
+    }
+}
+
+-(NSString *)emailDescription{
+    NSString *description = [[[NSString alloc]initWithFormat:@"%@", self.email]autorelease];
+    
+    return description;
+}
+
 @end
