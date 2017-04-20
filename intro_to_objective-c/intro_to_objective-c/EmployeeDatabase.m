@@ -16,7 +16,7 @@
 
 @implementation EmployeeDatabase
 
-//Singleton - Us the code snippet
+//Singleton - Us the code snippet 'dispatch once'
 +(instancetype)shared{
     
     static EmployeeDatabase *shared = nil;
@@ -30,13 +30,31 @@
     
 }
 
-- (instancetype)init
-{
+//Initalizer
+- (instancetype)init{
+    
     self = [super init];
     if (self) {
-        self.employees = [[NSMutableArray alloc]init];
+        
+        _employees = [NSKeyedUnarchiver unarchiveObjectWithData:[NSData dataWithContentsOfURL:self.archiveURL]];
+        
+        if (!_employees) {
+            _employees = [[NSMutableArray alloc]init];
+        }
     }
     return self;
+}
+
+//Methods
+
+-(void)save{
+    BOOL success = [NSKeyedArchiver archiveRootObject:self.employees toFile:self.archiveURL.path];
+    
+    if (success) {
+        NSLog(@"saved Employees");
+    } else {
+        NSLog(@"save failed");
+    }
 }
 
 -(NSInteger)count{
@@ -44,10 +62,7 @@
 }
 
 -(NSArray *)allEmployees;{
-    for(Employee *employee in self.employees){
-        NSLog(@"%@", employee.firstName);
-    }
-    return _employees;
+    return self.employees;
 }
 
 -(Employee *)employeeAtIndex:(int)index{
@@ -56,18 +71,22 @@
 
 -(void)add:(Employee *)employee{
     [self.employees addObject: employee];
+    [self save];
 }
 
 -(void)remove:(Employee *)employee{
     [self.employees removeObject:employee];
+    [self save];
 }
 
 -(void)removeEmployeeAtIndex:(int)index{
     [self.employees removeObjectAtIndex:index];
+    [self save];
 }
 
 -(void)removeAllemployees{
     [self.employees removeAllObjects];
+    [self save];
 }
 
 //MARK: Helper methods

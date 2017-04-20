@@ -29,21 +29,14 @@
     [super viewDidLoad];
     
     self.table.dataSource = self;
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleData) name:@"reloadData" object:nil];
     
     
-    Employee *original = [[Employee alloc]initWithFirstName:@"Kyle" lastName:@"Hillman" age:@"33" yearsEmployed:@2 manager:@"Myself" email:@"khillman84@gmail.com"];
-    Employee *numberTwo = [[Employee alloc]initWithFirstName:@"Angela" lastName:@"Hillman" age:@"33" yearsEmployed:@10 manager:@"Herself" email:@"hahaha@nope.com"];
-    
-    [[EmployeeDatabase shared] add: original];
-    [[EmployeeDatabase shared] add:numberTwo];
-    [[EmployeeDatabase shared] count];
-    [[EmployeeDatabase shared] allEmployees];
-    [[EmployeeDatabase shared] employeeAtIndex:1];
-    
-    
-    
-//    NSLog(@"%@", original.firstName);
-//    NSLog(@"%@", numberTwo.firstName);
+}
+
+-(void)handleData {
+    [self.table reloadData];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
