@@ -13,7 +13,7 @@
 #import "Employee.h"
 #import "EmployeeDatabase.h"
 
-//static void *kvoContext = &kvoContext;
+static void *kvoContext = &kvoContext;
 
 @interface ViewController () <ViewControllerDataSource, UITableViewDataSource>
 
@@ -31,24 +31,19 @@
     self.table.dataSource = self;
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleData) name:@"reloadData" object:nil];
-    
-//    [self setValue:NULL forKey:@"ViewController.handleData"];
 }
-
-//-(void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:animated];
-//    
-//    [self addObserver:self forKeyPath:@"ViewController.handleData" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:kvoContext];
-//}
-//
-//-(void)viewWillDisappear:(BOOL)animated{
-//    [super viewWillDisappear:animated];
-//    
-//    [self removeObserver:self forKeyPath:@"ViewController.handleData"];
-//}
 
 -(void)handleData {
     [self.table reloadData];
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    
+    if (context == kvoContext) {
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
