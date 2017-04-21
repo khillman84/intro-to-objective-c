@@ -36,16 +36,55 @@
     return person;
 }
 
--(void)walk {
+-(void)setFirstName:(NSString *)firstName{
     
-//    NSString *firstName = [self firstName];
-//
-//    NSLog(@"%@ is walking", firstName);
+    if(_firstName != firstName){
+        
+        [firstName retain];
+        [_firstName release];
+        
+        _firstName = firstName;
+    }
 }
 
-+(void)sayHello {
-    NSLog(@"Hello");
+-(NSString *)firstNameDescription{
+    NSString *description = [[[NSString alloc]initWithFormat:@"%@", self.firstName]autorelease];
+    
+    return description;
 }
 
+-(void)setLastName:(NSString *)lastName{
+    
+    if(_lastName != lastName){
+        
+        [lastName retain];
+        [_lastName release];
+        
+        _lastName = lastName;
+    }
+}
+
+-(NSString *)lastNameDescription{
+    NSString *description = [[[NSString alloc]initWithFormat:@"%@", self.lastName]autorelease];
+    
+    return description;
+}
+
+-(void)setAge:(NSString *)age{
+    
+    if(_age != age){
+        
+        [age retain];
+        [_age release];
+        
+        _age = age;
+    }
+}
+
+-(NSString *)ageDescription{
+    NSString *description = [[[NSString alloc]initWithFormat:@"%@", self.age]autorelease];
+    
+    return description;
+}
 
 @end

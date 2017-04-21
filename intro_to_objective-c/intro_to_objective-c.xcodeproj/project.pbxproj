@@ -15,10 +15,10 @@
 		E5AE009A1EA524ED00655962 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5AE00981EA524ED00655962 /* Main.storyboard */; };
 		E5AE009C1EA524ED00655962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5AE009B1EA524ED00655962 /* Assets.xcassets */; };
 		E5AE009F1EA524ED00655962 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5AE009D1EA524ED00655962 /* LaunchScreen.storyboard */; };
-		E5AE00A81EA52F0400655962 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE00A71EA52F0400655962 /* Person.m */; };
+		E5AE00A81EA52F0400655962 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE00A71EA52F0400655962 /* Person.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E5AE00AB1EA5455200655962 /* ViewController+Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE00AA1EA5455200655962 /* ViewController+Identifier.m */; };
 		E5AE00B51EA5A03100655962 /* NSString+Demo.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE00B41EA5A03100655962 /* NSString+Demo.m */; };
-		E5AE00B81EA5A48A00655962 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE00B71EA5A48A00655962 /* Employee.m */; };
+		E5AE00B81EA5A48A00655962 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE00B71EA5A48A00655962 /* Employee.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
